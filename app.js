@@ -10,8 +10,8 @@
 
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByClassName("main-btn")[0];//first button
-var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incompleteTasks
-var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
+var incompleteTaskHolder=document.querySelector(".incomplete-tasks");//ul of #incompleteTasks
+var completedTasksHolder=document.querySelector(".completed-tasks");//completed-tasks
 
 
 //New task list item
@@ -35,13 +35,13 @@ var createNewTaskElement=function(taskString){
     listItem.className="list-item";
 
     label.innerText=taskString;
-    label.className='task list-item-label completed-task-label';
+    label.className='task list-item__label completed-task-label';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
     checkBox.className='input-checkbox';
     editInput.type="text";
-    editInput.className="task input-text list-item-input-text";
+    editInput.className="task input-text list-item__input-text";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="edit main-btn";
